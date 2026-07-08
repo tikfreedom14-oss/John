@@ -105,7 +105,7 @@ footer b{color:var(--slate-l)}
   <div class="wrap">
     <div class="eyebrow">Marathon Training Plan · Bangsaen42</div>
     <h1 class="hero-name">Johnnee<br>Volajak</h1>
-    <p class="hero-sub">แผนซ้อม 18 สัปดาห์สู่มาราธอนแรก เป้า Sub 5:20 (มาราธอนที่ 2) — พัฒนาจาก PR 5:40:34 โฟกัสคุมเพซช่วง 30-42km และดัน MP ให้ชินเพซใหม่.</p>
+    <p class="hero-sub">แผนซ้อม 19 สัปดาห์สู่มาราธอนแรก เป้า Sub 5:20 (มาราธอนที่ 2) — พัฒนาจาก PR 5:40:34 โฟกัสคุมเพซช่วง 30-42km และดัน MP ให้ชินเพซใหม่.</p>
     <div class="hero-stats">
       <div class="hstat"><div class="k">Goal</div><div class="v">5:20</div><div class="u">Bangsaen42</div></div>
       <div class="hstat"><div class="k">Goal Pace</div><div class="v">7:35</div><div class="u">min/km</div></div>
@@ -118,7 +118,7 @@ footer b{color:var(--slate-l)}
 <nav><div class="wrap">
   <a href="#plan">📋 แผน</a>
   <a href="#zones">⏱️ โซน/เพซ</a>
-  <a href="#schedule">📅 ตาราง 18 สัปดาห์</a>
+  <a href="#schedule">📅 ตาราง 19 สัปดาห์</a>
   <a href="#howto">📖 วิธีแล่น</a>
   <a href="#pacing">🎯 Race Pace</a>
   <a href="#tips">💡 เคล็ดลับ</a>
@@ -131,12 +131,12 @@ footer b{color:var(--slate-l)}
       <div class="it">📊 วิเคราะห์จากมาราธอน Buriram 5:40:34</div>
       <p>Johnnee จบมาราธอนแล้ว มี base ดี! Split เต็ม 42km โชว์: 30km แรกคุมเพซดี (7:06-7:31) ค่อยช้าลงช่วง 35-42km (7:47→8:04) ซึ่งปกติของมาราธอน ไม่ได้พังยับ. เป้าที่ 2 คือพัฒนา ~20 นาที เป็น Sub 5:20. แผนเน้น: ดัน MP ให้ชินเพซใหม่ (7:35) + ฝึกคุมเพซช่วง 30-42km ที่เคยช้าลง.</p>
     </div>
-    <p class="sec-desc">แผน 18 สัปดาห์ 4 เฟส หลัก 3:1 (หนัก 3 · ลด 1). โครงสัปดาห์: จันทร์พัก · อังคาร speed เบา · พุธ easy · พฤหัส tempo/MP · ศุกร์ strength · เสาร์ easy+strides · อาทิตย์ long run.</p>
+    <p class="sec-desc">แผน 19 สัปดาห์ 4 เฟส หลัก 3:1 (หนัก 3 · ลด 1). โครงสัปดาห์: จันทร์พัก · อังคาร speed เบา · พุธ easy · พฤหัส tempo/MP · ศุกร์ strength · เสาร์ easy+strides · อาทิตย์ long run.</p>
     <div class="cards">
-      <div class="card"><h3>เฟส 1 · Base</h3><p>W1-5 · สร้างฐาน endurance · long run 12→20km · ฝึกวิ่งช้าสม่ำเสมอ</p></div>
-      <div class="card"><h3>เฟส 2 · Build</h3><p>W6-10 · เพิ่ม volume + MP · long run ถึง 28km · ฝึกคุมเพซ</p></div>
-      <div class="card"><h3>เฟส 3 · Peak</h3><p>W11-14 · long run ไกลสุด 30-32km · ซ้อม fueling + คุมเพซปลายทาง</p></div>
-      <div class="card"><h3>เฟส 4 · Taper</h3><p>W15-18 · ลด volume · รักษาความคุ้น pace · พร้อมแข่ง</p></div>
+      <div class="card"><h3>เฟส 1 · Base</h3><p>W1-6 · สร้างฐาน endurance · long run 12→20km · ฝึกวิ่งช้าสม่ำเสมอ</p></div>
+      <div class="card"><h3>เฟส 2 · Build</h3><p>W7-11 · เพิ่ม volume + MP · long run ถึง 28km · ฝึกคุมเพซ</p></div>
+      <div class="card"><h3>เฟส 3 · Peak</h3><p>W12-15 · long run ไกลสุด 30-32km · ซ้อม fueling + คุมเพซปลายทาง</p></div>
+      <div class="card"><h3>เฟส 4 · Taper</h3><p>W16-19 · ลด volume · รักษาความคุ้น pace · พร้อมแข่ง</p></div>
     </div>
   </div>
 </section>
@@ -242,24 +242,25 @@ const stG="Strength + Prehab (30-40min)\nSquat/Lunge/Glute/Core/Calf";
 const satG="Easy 4-5km + strides 4×80m";
 function W(n,ph,foc,km,tue,thu,sun){return{n,ph,foc,km,days:[["Tue",tue],["Wed",easy],["Thu",thu],["Fri",stG],["Sat",satG],["Sun",sun]]};}
 const weeks=[
- W(1,"Base","เริ่มสร้างฐาน",28,"Interval 5×600m @6:30\nrecovery jog 200m · WU/CD","Tempo 4km @7:05-7:15","Long 12km @7:55-8:10 Zone 2\nช้าๆ คุมเพซ"),
- W(2,"Base","วินัยวิ่งช้า",32,"Fartlek 1min hard/1min easy ×6\nhard @6:38 · WU/CD","Tempo 5km @7:02-7:12","Long 14km @7:50-8:05 Zone 2"),
- W(3,"Base","ไต่ระยะ",36,"Interval 5×800m @6:28\nrecovery jog 200m","Tempo 5km @7:00-7:10","Long 16km @7:45-8:02 Zone 2"),
- W(4,"Deload","🔽 ฟื้นตัว",26,"Interval 400m ×6 @6:20\nrecovery jog full","Easy 5km build-up\n8:10→7:10 ไล่ pace","Long 12km @7:55-8:10 เบาๆ"),
- W(5,"Base","ปิดบล็อก base",38,"Hill Repeats 45s ×8 @RPE 7\njog ลงพัก","Tempo 6km @7:00-7:10","Long 18km @7:45-8:00\nคุมเพซสม่ำเสมอ"),
- W(6,"Build","MP เริ่ม",40,"Interval 5×800m @6:25\nrecovery jog 200m","MP Run 6km @7:35\nชินเพซแข่ง","Long 20km @7:42-7:58 Zone 2"),
- W(7,"Build","tempo ยาว",44,"Hill Repeats 45s ×10 @RPE 7-8","Tempo 7km @6:58-7:08","Long 22km @7:40-7:55 Zone 2"),
- W(8,"Deload","🔽 ฟื้นตัว",30,"Fartlek 1min ×8 เบา","Easy 5km build-up","Long 16km @7:48-8:02 Zone 2"),
- W(9,"Build","ดัน MP",44,"Interval 5×1km @6:22\nrecovery jog 200m","MP Run 8km @7:35 🎯","Long 24km @7:40-7:55\nlast 4km MP"),
- W(10,"Build","ปิดบล็อก build",46,"Hill Repeats 60s ×10 @RPE 8","Tempo 8km @6:58-7:08","Long 26km @7:38-7:52\nlast 4km MP"),
- W(11,"Peak","Peak เริ่ม",48,"Interval 6×800m @6:22\nrecovery jog 200m","MP Run 10km @7:35 🎯","Long 28km @7:38-7:52\nlast 5km MP · ซ้อม fueling"),
- W(12,"Peak","Long ไกลสุด",50,"Interval 6×1km @6:20\nrecovery jog 200m","Tempo 9km @6:58-7:08","Long 30km @7:35-7:50\nlast 6km MP · fueling เต็ม"),
- W(13,"Peak","Peak สุดท้าย",48,"Interval 5×1km @6:22\nrecovery jog 200m","MP Run 10km @7:35","Long 32km @7:35-7:50\nlast 6km MP · ซ้อมคุมเพซปลาย"),
- W(14,"Deload","🔽 ก่อน taper",34,"Fartlek 2min ×6 เบา","Easy 6km build-up","Long 18km @7:48-8:02 Zone 2"),
- W(15,"Taper","Taper เริ่ม",34,"Interval 5×800m @6:25\nสั้นลง","MP Run 8km @7:35","Long 22km @7:42-7:57 Zone 2"),
- W(16,"Taper","ลด volume",28,"Fartlek 2min ×5 เบา","MP Run 6km @7:35\nรักษาความคุ้น pace","Long 16km @7:45-8:00 Zone 2"),
- W(17,"Taper","อาทิตย์ก่อนแข่ง",22,"Interval 400m ×5 @6:20\nsharpen เบาๆ","Easy 5km build-up เบา","Long 12km @7:45-8:00 · Carb-load เริ่ม"),
- W(18,"RACE","🏆 RACE WEEK",12,"Easy 4km + strides\nขาเบา สดชื่น","Easy 4km + strides\nก่อนแข่ง","🏆 RACE DAY — Sub 5:20!\nคุมเพซต้น! Pace 7:35 · Gel ทุก 40 นาที"),
+ W(1,"สร้างฐาน",32,"Interval 5×600m @6:00","Tempo 5km @6:30","Long 14km @7:30"),
+ W(2,"เพิ่ม volume",36,"Fartlek 1min/1min ×8","Tempo 6km @6:25","Long 16km @7:25"),
+ W(3,"ไต่ระยะ",40,"Interval 5×800m @5:55","Tempo 6km @6:20","Long 18km @7:20"),
+ W(4,"🔽 ฟื้นตัว",28,"Easy 5km","Easy 5km","Long 12km"),
+ W(5,"MP เริ่ม",42,"Hill 8×45s","MP 8km @7:06","Long 20km @7:15"),
+ W(6,"Build",44,"Interval 6×800m @5:55","MP 10km @7:06","Long 22km @7:15"),
+ W(7,"Build",48,"Tempo 7km @6:20","MP 12km @7:06","Long 24km @7:10"),
+ W(8,"🔽 ฟื้นตัว",34,"Easy 5km","Easy 5km","Long 15km"),
+ W(9,"Peak 1",48,"Interval 5×1km @5:50","MP 14km @7:06","Long 26km @7:10"),
+ W(10,"Peak 1",50,"Tempo 8km @6:20","MP 15km @7:06","Long 28km @7:08"),
+ W(11,"Peak 1",52,"Interval 6×1km @5:50","MP 16km @7:06","Long 30km @7:06"),
+ W(12,"🔽 ฟื้นตัว",38,"Easy 6km","Easy 6km","Long 18km"),
+ W(13,"Peak 2",54,"Tempo 10km @6:20","MP 18km @7:06","Long 32km @7:06"),
+ W(14,"Peak 2",56,"Interval 6×1km @5:45","MP 20km @7:06","Long 34km @7:06"),
+ W(15,"Peak 2",50,"Tempo 8km @6:15","MP 15km @7:06","Long 28km @7:08"),
+ W(16,"🔽 ฟื้นตัว",38,"Easy 6km","Easy 6km","Long 20km"),
+ W(17,"Taper",36,"Easy 5km","MP 10km @7:06","Long 20km @7:15"),
+ W(18,"Taper",30,"Easy 4km","Easy 4km","Long 12km"),
+ W(19,"RACE",14,"Easy 3km","Rest","🏆 RACE DAY Sub 5:00!"),
 ];
 const wg=document.getElementById("weeksGrid");
 weeks.forEach(w=>{const e=document.createElement("div");e.className="wk";e.style.setProperty("--ph",PH[w.ph]||"#4a7fb5");
