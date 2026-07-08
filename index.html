@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Johnnee · Sub 5:20 · Bangsaen42</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Noto+Sans+Lao:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1620; --bg-2:#18222f; --panel:#1c2836; --ink:#e4ebf2; --ink-soft:#9fb0c2;
+  --line:#2c3a4a; --slate:#4a7fb5; --slate-l:#6fa3d6; --amber:#e8a23d; --lime:#8bc34a; --coral:#e05a5a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Noto Sans Lao","IBM Plex Mono",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+header{background:radial-gradient(120% 100% at 0% 0%,#1e3350,var(--bg-2) 70%);
+  padding:48px 0 40px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;
+  background:linear-gradient(90deg,var(--slate),var(--amber),var(--lime))}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
+.hero-name{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(38px,8vw,64px);line-height:.95;letter-spacing:-1px}
+.hero-sub{font-size:15px;color:var(--ink-soft);margin-top:12px;max-width:580px}
+.hero-stats{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
+.hstat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 20px}
+.hstat .k{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft)}
+.hstat .v{font-family:"Archivo",sans-serif;font-weight:700;font-size:30px;line-height:1;margin-top:4px}
+.hstat .u{font-size:11px;color:var(--amber);margin-top:3px}
+
+nav{position:sticky;top:0;z-index:40;background:rgba(15,22,32,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 0}
+nav .wrap{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+nav .wrap::-webkit-scrollbar{display:none}
+nav a{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.5px;color:var(--ink-soft);text-decoration:none;padding:7px 13px;border-radius:8px;white-space:nowrap;transition:.15s}
+nav a:hover{background:var(--slate);color:#fff}
+
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+.sec-num{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--amber)}
+.sec-title{font-family:"Archivo",sans-serif;font-weight:700;font-size:30px;text-transform:uppercase;letter-spacing:-.5px}
+.sec-desc{color:var(--ink-soft);font-size:14.5px;margin-bottom:24px;max-width:680px}
+
+.insight{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:12px;padding:20px 22px;margin-bottom:24px}
+.insight .it{font-family:"Archivo",sans-serif;font-weight:700;font-size:17px;color:var(--amber);margin-bottom:8px;text-transform:uppercase}
+.insight p{font-size:14px;color:var(--ink-soft)}
+
+.zones{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.zone{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;border-top:4px solid var(--z)}
+.zone .zt{font-family:"Archivo",sans-serif;font-weight:700;font-size:18px;text-transform:uppercase}
+.zone .zn{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+.zone .zp{font-family:"Archivo",sans-serif;font-weight:700;font-size:25px;color:var(--slate-l)}
+.zone .zd{font-size:12px;color:var(--ink-soft);margin-top:6px;line-height:1.45}
+
+.weeks{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.wk{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;transition:.15s;border-left:4px solid var(--ph)}
+.wk:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.3);border-color:var(--slate)}
+.wk .wn{font-family:"Archivo",sans-serif;font-weight:800;font-size:22px}
+.wk .wp{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--amber)}
+.wk .wl{font-size:12px;color:var(--ink-soft);margin-top:6px}
+.wk .wkm{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--lime);margin-top:8px;font-weight:500}
+
+.modal{position:fixed;inset:0;background:rgba(8,12,18,.7);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+.modal.on{display:flex}
+.mbox{background:var(--bg-2);border-radius:18px;max-width:520px;width:100%;max-height:85vh;overflow-y:auto;border:1px solid var(--line)}
+.mhead{background:linear-gradient(120deg,#1e3350,#254063);color:#fff;padding:22px 24px;position:sticky;top:0;border-radius:18px 18px 0 0}
+.mhead .mn{font-family:"Archivo",sans-serif;font-weight:700;font-size:24px}
+.mhead .mp{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--amber);letter-spacing:1px;text-transform:uppercase}
+.mbody{padding:16px 24px 26px}
+.day{padding:14px 0;border-bottom:1px solid var(--line);display:flex;gap:14px}
+.day:last-child{border:none}
+.day .dn{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;color:var(--amber);min-width:40px;padding-top:2px;text-transform:uppercase}
+.day .dc{font-size:14px;white-space:pre-line;line-height:1.55}
+.mclose{background:var(--slate);color:#fff;border:none;padding:12px;width:100%;font-family:"Archivo",sans-serif;font-weight:700;font-size:16px;text-transform:uppercase;border-radius:0 0 18px 18px;cursor:pointer}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{font-family:"Archivo",sans-serif;font-weight:700;font-size:18px;text-transform:uppercase;margin-bottom:8px}
+.card p{font-size:13.5px;color:var(--ink-soft);line-height:1.6}
+
+.pill-tabs{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.ptab{flex:1;min-width:130px;background:var(--panel);border:1.5px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;text-align:center;transition:.15s;font-family:"Archivo",sans-serif;font-weight:700;font-size:18px;color:var(--ink-soft)}
+.ptab span{display:block;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:400;margin-top:3px}
+.ptab.active{border-color:var(--amber);color:var(--amber);background:rgba(232,162,61,.1)}
+.ptable{width:100%;border-collapse:collapse;font-size:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.ptable th{background:#254063;color:#fff;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:11px 14px;text-align:left}
+.ptable td{padding:11px 14px;border-bottom:1px solid var(--line)}
+.ptable tr:last-child td{border:none}
+.ptable .mono{font-family:"IBM Plex Mono",monospace}
+.callout{background:rgba(74,127,181,.1);border:1px solid var(--slate);border-radius:12px;padding:18px 20px;margin-top:20px}
+.callout .ct{font-family:"Archivo",sans-serif;font-weight:700;font-size:16px;color:var(--slate-l);margin-bottom:10px;text-transform:uppercase}
+.callout ol{margin-left:18px;font-size:13.5px;color:var(--ink-soft);line-height:1.7}
+.callout.amber{background:rgba(232,162,61,.09);border-color:var(--amber)}
+.callout.amber .ct{color:var(--amber)}
+
+footer{padding:36px 0;text-align:center;color:var(--ink-soft);font-size:13px}
+footer b{color:var(--slate-l)}
+@media(max-width:600px){.sec-title{font-size:24px}.day{flex-direction:column;gap:4px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Marathon Training Plan · Bangsaen42</div>
+    <h1 class="hero-name">Johnnee<br>Volajak</h1>
+    <p class="hero-sub">แผนซ้อม 18 สัปดาห์สู่มาราธอนแรก เป้า Sub 5:20 (มาราธอนที่ 2) — พัฒนาจาก PR 5:40:34 โฟกัสคุมเพซช่วง 30-42km และดัน MP ให้ชินเพซใหม่.</p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="k">Goal</div><div class="v">5:20</div><div class="u">Bangsaen42</div></div>
+      <div class="hstat"><div class="k">Goal Pace</div><div class="v">7:35</div><div class="u">min/km</div></div>
+      <div class="hstat"><div class="k">Marathon PR</div><div class="v">5:40:34</div><div class="u">Buriram 2025</div></div>
+      <div class="hstat"><div class="k">Focus</div><div class="v">Pacing</div><div class="u">30-42km</div></div>
+    </div>
+  </div>
+</header>
+
+<nav><div class="wrap">
+  <a href="#plan">📋 แผน</a>
+  <a href="#zones">⏱️ โซน/เพซ</a>
+  <a href="#schedule">📅 ตาราง 18 สัปดาห์</a>
+  <a href="#howto">📖 วิธีแล่น</a>
+  <a href="#pacing">🎯 Race Pace</a>
+  <a href="#tips">💡 เคล็ดลับ</a>
+</div></nav>
+
+<section id="plan">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">ภาพรวมแผน</h2></div>
+    <div class="insight">
+      <div class="it">📊 วิเคราะห์จากมาราธอน Buriram 5:40:34</div>
+      <p>Johnnee จบมาราธอนแล้ว มี base ดี! Split เต็ม 42km โชว์: 30km แรกคุมเพซดี (7:06-7:31) ค่อยช้าลงช่วง 35-42km (7:47→8:04) ซึ่งปกติของมาราธอน ไม่ได้พังยับ. เป้าที่ 2 คือพัฒนา ~20 นาที เป็น Sub 5:20. แผนเน้น: ดัน MP ให้ชินเพซใหม่ (7:35) + ฝึกคุมเพซช่วง 30-42km ที่เคยช้าลง.</p>
+    </div>
+    <p class="sec-desc">แผน 18 สัปดาห์ 4 เฟส หลัก 3:1 (หนัก 3 · ลด 1). โครงสัปดาห์: จันทร์พัก · อังคาร speed เบา · พุธ easy · พฤหัส tempo/MP · ศุกร์ strength · เสาร์ easy+strides · อาทิตย์ long run.</p>
+    <div class="cards">
+      <div class="card"><h3>เฟส 1 · Base</h3><p>W1-5 · สร้างฐาน endurance · long run 12→20km · ฝึกวิ่งช้าสม่ำเสมอ</p></div>
+      <div class="card"><h3>เฟส 2 · Build</h3><p>W6-10 · เพิ่ม volume + MP · long run ถึง 28km · ฝึกคุมเพซ</p></div>
+      <div class="card"><h3>เฟส 3 · Peak</h3><p>W11-14 · long run ไกลสุด 30-32km · ซ้อม fueling + คุมเพซปลายทาง</p></div>
+      <div class="card"><h3>เฟส 4 · Taper</h3><p>W15-18 · ลด volume · รักษาความคุ้น pace · พร้อมแข่ง</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="zones">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">โซน & เพซ</h2></div>
+    <p class="sec-desc">เพซจากเป้า Sub 5:20 (MP 7:35). Johnnee มี base มาราธอนแล้ว—เน้นดัน MP ให้ชินเพซใหม่ + long run คุม Zone 2.</p>
+    <div class="zones" id="zonesGrid"></div>
+  </div>
+</section>
+
+<section id="schedule">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">ตาราง 18 สัปดาห์</h2></div>
+    <p class="sec-desc">กดแต่ละสัปดาห์ดู 6 วัน (จันทร์พัก). Long run ไต่: 12→14→16→<b>12</b>→18→20→22→<b>16</b>→24→26→28→<b>18</b>→30→32→taper. ตัวหนา = deload.</p>
+    <div class="weeks" id="weeksGrid"></div>
+  </div>
+</section>
+
+<section id="howto">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">วิธีแล่นแต่ละวัน</h2></div>
+    <p class="sec-desc">ทุก session: warm-up jog 10 นาที + strides → เนื้อหลัก → cool-down + ยืด.</p>
+    <div class="cards" id="howtoGrid"></div>
+  </div>
+</section>
+
+<section id="pacing">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Race Pacing</h2></div>
+    <p class="sec-desc">ตารางเพซวันแข่ง. กดเลือกเป้าตามสภาพร่างกาย/อากาศ.</p>
+    <div class="pill-tabs" id="goalTabs">
+      <div class="ptab" data-t="5:30:00">A · 5:30<span>ปลอดภัย/ร้อน</span></div>
+      <div class="ptab active" data-t="5:20:00">B · 5:20<span>เป้าหลัก</span></div>
+      <div class="ptab" data-t="5:10:00">C · 5:10<span>วันฟอร์มดี</span></div>
+    </div>
+    <table class="ptable"><thead><tr><th>ระยะ</th><th>เวลาสะสม</th><th>เพซ/km</th><th>หมายเหตุ</th></tr></thead>
+      <tbody id="paceBody"></tbody></table>
+    <div class="callout amber">
+      <div class="ct">🏁 กลยุทธ์วันแข่ง — พัฒนาจาก 5:40</div>
+      <ol>
+        <li>km 1-15: ล็อกเพซเป้า 7:35 ให้นิ่ง อย่าเผลอเร็ว (ครั้งก่อนคุม 30km แรกได้ดีอยู่แล้ว)</li>
+        <li>km 16-30: รักษาเพซ · ดื่มน้ำทุกจุด · Gel ทุก 40 นาที (จุดสำคัญกันช้าลง)</li>
+        <li>km 31-42: จุดที่ครั้งก่อนช้าลง (7:47→8:04) — คราวนี้ฝึกคุมเพซมาแล้ว อดทนรักษา 7:35</li>
+        <li>ถ้ารักษาเพซช่วง 35-42 ได้ = ทำลาย PR 5:40 แน่นอน</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="tips">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">เคล็ดลับ</h2></div>
+    <div class="cards">
+      <div class="card"><h3>🎯 คุมเพซ 30-42km</h3><p>Johnnee มี base มาราธอนแล้ว! จุดพัฒนาคือช่วง 35-42km ที่เคยช้าลง. ฝึกคุมเพซใน long run ช่วงท้าย + MP practice บ่อยๆ.</p></div>
+      <div class="card"><h3>🎯 ดัน MP ใหม่</h3><p>เป้าใหม่ 7:35 เร็วกว่าเพซมาราธอนเดิม (8:04). ต้อง MP practice บ่อยๆ ให้ร่างกายชินเพซใหม่ ก่อนวันแข่ง.</p></div>
+      <div class="card"><h3>🍚 Fueling</h3><p>Long run 90 นาที+ Gel ทุก 40 นาที. ฝึกกินในซ้อมให้ท้องชิน—สำคัญมากสำหรับป้องกัน fade.</p></div>
+      <div class="card"><h3>💪 Strength</h3><p>วันศุกร์: squat, lunge, glute bridge, core, calf. posterior chain ช่วยรักษาฟอร์มตอนล้า km 30+.</p></div>
+      <div class="card"><h3>⏱️ คุมเพซ</h3><p>ใช้นาฬิกาตั้ง pace alert—เตือนถ้าเร็วเกิน. ฝึกวิ่ง even pace ในซ้อม จะติดเป็นนิสัยวันแข่ง.</p></div>
+      <div class="card"><h3>🛌 ฟื้นตัว</h3><p>นอนพอ · deload สำคัญ · เจ็บให้พัก · สม่ำเสมอชนะหักโหม. มาราธอนแรก—สนุกกับการเดินทาง.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="modal" id="modal"><div class="mbox">
+  <div class="mhead"><div class="mn" id="mTitle"></div><div class="mp" id="mPhase"></div></div>
+  <div class="mbody" id="mBody"></div>
+  <button class="mclose" onclick="closeModal()">ปิด</button>
+</div></div>
+
+<footer><div class="wrap">
+  แผนซ้อม <b>Sub 5:20</b> สำหรับ Johnnee Volajak · Bangsaen42 · สร้างโดยโค้ช 🏃<br>
+  <span style="font-size:11px;color:var(--amber)">โฟกัส endurance + คุมเพซ · เริ่มช้าดีกว่าเริ่มเร็ว · จบแข็งแรงคือชัยชนะ</span>
+</div></footer>
+
+<script>
+const zones=[
+ {t:"Interval",n:"speed",p:"6:30-6:45",d:"งานเร็วสั้น มีพัก · ดู pace",z:"#e05a5a"},
+ {t:"Tempo",n:"Threshold",p:"7:00-7:15",d:"หนักคุมได้ · พูดสั้นๆ",z:"#e8a23d"},
+ {t:"Marathon",n:"MP · Goal",p:"7:35",d:"เพซเป้าแข่ง · ฝึกให้ชิน",z:"#4a7fb5"},
+ {t:"Long",n:"Endurance",p:"7:40-8:05",d:"Zone 2 · คุยได้ · กุญแจสำคัญ",z:"#8bc34a"},
+ {t:"Easy",n:"Recovery",p:"7:50-8:20",d:"เบาจริง! ช้าจนคุยสบาย",z:"#7d8fa0"},
+];
+const zg=document.getElementById("zonesGrid");
+zones.forEach(z=>{const e=document.createElement("div");e.className="zone";e.style.setProperty("--z",z.z);
+  e.innerHTML=`<div class="zt" style="color:${z.z}">${z.t}</div><div class="zn">${z.n}</div><div class="zp">${z.p}</div><div class="zd">${z.d}</div>`;zg.appendChild(e);});
+
+const howto=[
+ {h:"Easy / Recovery",p:"ต่อเนื่องยาวคงที่ Zone 2 คุยได้สบาย (7:50-8:20). ช้าจริง—สร้างฐาน endurance."},
+ {h:"Long Run",p:"ต่อเนื่องยาว Zone 2 ช้าๆ. กุญแจสำคัญ! ถ้าเขียน last Xkm MP = เร่งช่วงท้าย. Gel ทุก 40 นาที."},
+ {h:"Tempo",p:"WU → tempo pace (7:00-7:15) ต่อเนื่อง หรือซอย 3×2km พัก 90s → CD."},
+ {h:"MP Run",p:"แล่น continuous ที่ MP (7:35). ฝึกให้ชินเพซแข่งใหม่ + คุมเพซสม่ำเสมอ."},
+ {h:"Interval",p:"ซอยเป็นท่อน เช่น 5×800m @6:35 พัก jog 200m. ฝึกความเร็ว."},
+ {h:"Strength",p:"squat, lunge, glute bridge, core, calf raise. ป้องกันบาดเจ็บ + รักษาฟอร์ม."},
+];
+const hg=document.getElementById("howtoGrid");
+howto.forEach(x=>{const e=document.createElement("div");e.className="card";e.innerHTML=`<h3>${x.h}</h3><p>${x.p}</p>`;hg.appendChild(e);});
+
+const PH={Base:"#8bc34a",Build:"#4a7fb5",Peak:"#e05a5a",Deload:"#e8a23d",Taper:"#7d8fa0",RACE:"#e05a5a"};
+const easy="Easy 5-6km @7:55-8:15 Zone 2";
+const stG="Strength + Prehab (30-40min)\nSquat/Lunge/Glute/Core/Calf";
+const satG="Easy 4-5km + strides 4×80m";
+function W(n,ph,foc,km,tue,thu,sun){return{n,ph,foc,km,days:[["Tue",tue],["Wed",easy],["Thu",thu],["Fri",stG],["Sat",satG],["Sun",sun]]};}
+const weeks=[
+ W(1,"Base","เริ่มสร้างฐาน",28,"Interval 5×600m @6:30\nrecovery jog 200m · WU/CD","Tempo 4km @7:05-7:15","Long 12km @7:55-8:10 Zone 2\nช้าๆ คุมเพซ"),
+ W(2,"Base","วินัยวิ่งช้า",32,"Fartlek 1min hard/1min easy ×6\nhard @6:38 · WU/CD","Tempo 5km @7:02-7:12","Long 14km @7:50-8:05 Zone 2"),
+ W(3,"Base","ไต่ระยะ",36,"Interval 5×800m @6:28\nrecovery jog 200m","Tempo 5km @7:00-7:10","Long 16km @7:45-8:02 Zone 2"),
+ W(4,"Deload","🔽 ฟื้นตัว",26,"Interval 400m ×6 @6:20\nrecovery jog full","Easy 5km build-up\n8:10→7:10 ไล่ pace","Long 12km @7:55-8:10 เบาๆ"),
+ W(5,"Base","ปิดบล็อก base",38,"Hill Repeats 45s ×8 @RPE 7\njog ลงพัก","Tempo 6km @7:00-7:10","Long 18km @7:45-8:00\nคุมเพซสม่ำเสมอ"),
+ W(6,"Build","MP เริ่ม",40,"Interval 5×800m @6:25\nrecovery jog 200m","MP Run 6km @7:35\nชินเพซแข่ง","Long 20km @7:42-7:58 Zone 2"),
+ W(7,"Build","tempo ยาว",44,"Hill Repeats 45s ×10 @RPE 7-8","Tempo 7km @6:58-7:08","Long 22km @7:40-7:55 Zone 2"),
+ W(8,"Deload","🔽 ฟื้นตัว",30,"Fartlek 1min ×8 เบา","Easy 5km build-up","Long 16km @7:48-8:02 Zone 2"),
+ W(9,"Build","ดัน MP",44,"Interval 5×1km @6:22\nrecovery jog 200m","MP Run 8km @7:35 🎯","Long 24km @7:40-7:55\nlast 4km MP"),
+ W(10,"Build","ปิดบล็อก build",46,"Hill Repeats 60s ×10 @RPE 8","Tempo 8km @6:58-7:08","Long 26km @7:38-7:52\nlast 4km MP"),
+ W(11,"Peak","Peak เริ่ม",48,"Interval 6×800m @6:22\nrecovery jog 200m","MP Run 10km @7:35 🎯","Long 28km @7:38-7:52\nlast 5km MP · ซ้อม fueling"),
+ W(12,"Peak","Long ไกลสุด",50,"Interval 6×1km @6:20\nrecovery jog 200m","Tempo 9km @6:58-7:08","Long 30km @7:35-7:50\nlast 6km MP · fueling เต็ม"),
+ W(13,"Peak","Peak สุดท้าย",48,"Interval 5×1km @6:22\nrecovery jog 200m","MP Run 10km @7:35","Long 32km @7:35-7:50\nlast 6km MP · ซ้อมคุมเพซปลาย"),
+ W(14,"Deload","🔽 ก่อน taper",34,"Fartlek 2min ×6 เบา","Easy 6km build-up","Long 18km @7:48-8:02 Zone 2"),
+ W(15,"Taper","Taper เริ่ม",34,"Interval 5×800m @6:25\nสั้นลง","MP Run 8km @7:35","Long 22km @7:42-7:57 Zone 2"),
+ W(16,"Taper","ลด volume",28,"Fartlek 2min ×5 เบา","MP Run 6km @7:35\nรักษาความคุ้น pace","Long 16km @7:45-8:00 Zone 2"),
+ W(17,"Taper","อาทิตย์ก่อนแข่ง",22,"Interval 400m ×5 @6:20\nsharpen เบาๆ","Easy 5km build-up เบา","Long 12km @7:45-8:00 · Carb-load เริ่ม"),
+ W(18,"RACE","🏆 RACE WEEK",12,"Easy 4km + strides\nขาเบา สดชื่น","Easy 4km + strides\nก่อนแข่ง","🏆 RACE DAY — Sub 5:20!\nคุมเพซต้น! Pace 7:35 · Gel ทุก 40 นาที"),
+];
+const wg=document.getElementById("weeksGrid");
+weeks.forEach(w=>{const e=document.createElement("div");e.className="wk";e.style.setProperty("--ph",PH[w.ph]||"#4a7fb5");
+  e.innerHTML=`<div class="wp">${w.ph}</div><div class="wn">W${w.n}</div><div class="wl">${w.foc}</div><div class="wkm">~${w.km} km/wk</div>`;
+  e.onclick=()=>openWeek(w);wg.appendChild(e);});
+function openWeek(w){
+  document.getElementById("mTitle").textContent="Week "+w.n+" · "+w.foc;
+  document.getElementById("mPhase").textContent=w.ph+" · ~"+w.km+" km";
+  document.getElementById("mBody").innerHTML=
+    `<div class="day"><div class="dn">Mon</div><div class="dc">พัก (Rest) · ทำ prehab ได้</div></div>`+
+    w.days.map(d=>`<div class="day"><div class="dn">${d[0]}</div><div class="dc">${d[1]}</div></div>`).join("");
+  document.getElementById("modal").classList.add("on");
+}
+function closeModal(){document.getElementById("modal").classList.remove("on");}
+document.getElementById("modal").onclick=e=>{if(e.target.id==="modal")closeModal();};
+
+function parseHMS(s){const p=s.split(":").map(Number);return p[0]*3600+p[1]*60+p[2];}
+function fmtHMS(sec){sec=Math.round(sec);const h=Math.floor(sec/3600),m=Math.floor((sec%3600)/60),s=sec%60;return h+":"+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");}
+function fmtPace(sec){const m=Math.floor(sec/60),s=Math.round(sec%60);return m+":"+String(s).padStart(2,"0");}
+const MARK=[{km:5,n:""},{km:10,n:"ออกช้า สำคัญ!"},{km:15,n:""},{km:21.1,n:"ครึ่งทาง"},{km:25,n:""},{km:30,n:"จุดที่เคยพัง—อดทน"},{km:35,n:""},{km:40,n:"ช่วงตัดสิน"},{km:42.195,n:"🏁 FINISH"}];
+function renderPace(time){const tot=parseHMS(time),pace=tot/42.195;
+  document.getElementById("paceBody").innerHTML=MARK.map(m=>{
+    const lbl=m.km===42.195?"42.2 km":m.km===21.1?"21.1 km":m.km+" km";
+    return `<tr><td class="mono">${lbl}</td><td class="mono">${fmtHMS(pace*m.km)}</td><td class="mono">${fmtPace(pace)}</td><td>${m.n}</td></tr>`;}).join("");}
+document.querySelectorAll(".ptab").forEach(t=>{t.onclick=()=>{document.querySelectorAll(".ptab").forEach(x=>x.classList.remove("active"));t.classList.add("active");renderPace(t.dataset.t);};});
+renderPace("5:20:00");
+</script>
+</body>
+</html>
