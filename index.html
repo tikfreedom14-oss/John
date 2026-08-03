@@ -166,6 +166,25 @@ footer b{color:var(--slate-l)}
 
     <p class="sec-desc" style="margin-top:24px">โครงสัปดาห์: จันทร์พัก · อังคาร speed · พุธ easy · พฤหัส tempo/MP · ศุกร์ strength · เสาร์ easy+strides · อาทิตย์ long run. ยึด <b>3:1</b> เคร่งครัด (หนัก 3 · ลด 1).</p>
 
+
+    <div class="callout" style="margin-top:14px">
+
+     <div class="ct">⚠️ สัปดาห์แรกหลัง deload — จุดที่ต้องระวังที่สุด</div>
+
+        <ul>
+
+         <li>ภายในบล็อกเพิ่ม volume ~7-10%/สัปดาห์ ซึ่งปลอดภัย <b>แต่รอยต่อหลัง deload กระโดด 40-60%</b> (เช่น W4→W5, W8→W9, W12→W13)</li>
+
+         <li>เทียบกับ peak ก่อนหน้าแล้วถือว่า +10% ถูกต้อง <b>แต่ร่างกายจำสัปดาห์ที่เพิ่งผ่านมา ไม่ได้จำสัปดาห์ก่อนโน้น</b></li>
+
+         <li>✅ <b>วิธีคุม:</b> สัปดาห์แรกหลัง deload ให้ตัด Easy วันพุธลง 2-3 km และเก็บ quality session (อังคาร/พฤหัส/อาทิตย์) ไว้ครบ · ถ้าผ่านไปสบายค่อยกลับมาเต็มในสัปดาห์ถัดไป</li>
+
+         <li>สัญญาณว่ากระโดดแรงเกิน: ขาหนักตั้งแต่วอร์มอัพ · HR สูงกว่าปกติที่เพซเดิม · นอนไม่พอฟื้น 2 วันติด</li>
+
+      </ul>
+
+    </div>
+
     <div class="cards">
       <div class="card"><span class="wk-tag">W1-3 (+ deload W4)</span><h3>เฟส 1 · Base</h3><p>สร้างฐาน · long 12→16km · ฝึก <b>วินัยวิ่งช้า</b> (Easy ต้องช้าจริง) · tempo สั้น.</p></div>
       <div class="card"><span class="wk-tag">W5-7 (+ deload W8)</span><h3>เฟส 2 · Build</h3><p>เริ่ม MP run ที่เพซใหม่ 7:27 · long ถึง 21km (2:50 ชม.) · volume แตะ 50 km/wk.</p></div>
@@ -336,8 +355,8 @@ const zones=[
  {t:"Interval",n:"speed",p:"6:25-6:40",d:"งานเร็วสั้น มีพัก · ดู pace · ≈ เพซ 5K",z:"#e05a5a"},
  {t:"Tempo",n:"Threshold",p:"6:50-7:05",d:"หนักคุมได้ · พูดสั้นๆ · ≈ เพซ Half หรือเร็วกว่านิด",z:"#e8a23d"},
  {t:"Marathon",n:"MP · Goal",p:"7:27",d:"เพซซ้อม (Sub 5:15) · Dream = 7:06",z:"#4a7fb5"},
- {t:"Long",n:"Endurance",p:"7:58-8:20",d:"Zone 2 · คุยได้ · คุมเวลาไม่เกิน 3:30 ชม.",z:"#8bc34a"},
- {t:"Easy",n:"Recovery",p:"8:05-8:30",d:"เบาจริง! ช้าจนคุยสบาย · ห้ามเร็ว",z:"#7d8fa0"},
+ {t:"Long",n:"Endurance",p:"7:55-8:15",d:"Zone 2 ขอบบน · ⚠️ ต้องเร็วกว่า Easy อย่างน้อย 25 วิ/km · คุมเวลาไม่เกิน 3:30 ชม.",z:"#8bc34a"},
+ {t:"Easy",n:"Recovery",p:"8:25-8:55",d:"Zone 2 ขอบล่าง · เบาจริง! ⚠️ ปรับช้าลงจากเดิม 8:05-8:30 เพื่อแยกจาก Long",z:"#7d8fa0"},
 ];
 const zg=document.getElementById("zonesGrid");
 zones.forEach(z=>{const e=document.createElement("div");e.className="zone";e.style.setProperty("--z",z.z);
@@ -384,8 +403,8 @@ function wkDate(n){
 const FRI_STD="Strength + Prehab (35 นาที)\nSquat 3×10 · Lunge 3×10/ข้าง\nGlute Bridge 3×12 · Core 3×30s · Calf Raise 3×12";
 const FRI_LIGHT="Strength เบา (20 นาที)\nBodyweight + Core + ยืดเหยียด";
 const FRI_TAPER="Core + ยืดเหยียด (15 นาที)\nไม่ยกหนัก";
-const ez=k=>`Easy ${k}km @8:05-8:25 · Zone 2`;
-const sa=k=>`Easy ${k}km @8:05-8:25 + strides 4×80m`;
+const ez=k=>`Easy ${k}km @8:25-8:55 · Zone 2`;
+const sa=k=>`Easy ${k}km @8:25-8:55 + strides 4×80m`;
 // long run: แสดงเวลาบนขา + เพดาน 3:30
 function LR(km,pace,extra){
   const p=pace.split(":"), ps=+p[0]*60+ +p[1];
@@ -420,7 +439,7 @@ const weeks=[
   LR(10,"8:20","เบาๆ ให้ร่างกายซึมซับ")),
 
  W(5,"Build","MP เริ่มจริงจัง",45,
-  "Hill Repeats 45s ×8 @RPE 7-8\njog ลงพัก · WU/CD 2km", ez(6),
+  "Hill Repeats 45s ×8 @RPE 7-8\njog ลงพัก\n⚠️ RPE คือเพดาน ไม่ใช่เป้า — ฟอร์มเสียหรือรอบขาตกเมื่อไหร่ให้จบชุดทันที ไม่ต้องทำครบ · WU/CD 2km", ez(6),
   "MP Run 6km @7:27 🎯\nต่อเนื่อง · ชินเพซใหม่ · WU/CD 2km", FRI_STD, sa(5),
   LR(18,"8:08")),
  W(6,"Build","tempo ยาวขึ้น",48,
@@ -428,7 +447,7 @@ const weeks=[
   "Tempo 7km @6:50-7:00\nต่อเนื่อง · WU/CD 2km", FRI_STD, sa(5),
   LR(20,"8:05","Gel ทุก 30 นาที (เป้า 45-60g คาร์บ/ชม.) + เกลือแร่")),
  W(7,"Build","ปิดบล็อก 2",50,
-  "Hill Repeats 45s ×10 @RPE 7-8\njog ลงพัก · WU/CD 2km", ez(6),
+  "Hill Repeats 45s ×10 @RPE 7-8\njog ลงพัก\n⚠️ RPE คือเพดาน ไม่ใช่เป้า — ฟอร์มเสียหรือรอบขาตกเมื่อไหร่ให้จบชุดทันที ไม่ต้องทำครบ · WU/CD 2km", ez(6),
   "MP Run 8km @7:27\nต่อเนื่อง · WU/CD 2km", FRI_STD, sa(5),
   LR(21,"8:05")),
  W(8,"Deload","🔽 ฟื้นตัว 2",35,
@@ -437,30 +456,30 @@ const weeks=[
   LR(14,"8:12")),
 
  W(9,"Peak","Peak เริ่ม",52,
-  "Interval 5×1km @6:25-6:35\nrecovery jog 200m / 90s", ez(6),
+  "Interval 5×1km @7:00-7:15 ⚠️ปรับใหม่\nrecovery jog 200m / 90s", ez(6),
   "MP Run 8km @7:27 🎯\nต่อเนื่อง · WU/CD 2km", FRI_STD, sa(5),
   LR(22,"8:03","Gel ทุก 30 นาที (เป้า 45-60g คาร์บ/ชม.) + เกลือแร่")),
  W(10,"Peak","สะสมความทน",53,
-  "Hill Repeats 60s ×8 @RPE 8\njog ลงพัก · WU/CD 2km", ez(6),
+  "Hill Repeats 60s ×8 @RPE 8\njog ลงพัก\n⚠️ RPE คือเพดาน ไม่ใช่เป้า — ฟอร์มเสียหรือรอบขาตกเมื่อไหร่ให้จบชุดทันที ไม่ต้องทำครบ · WU/CD 2km", ez(6),
   "Tempo 8km @6:50-7:00\nต่อเนื่อง · WU/CD 2km", FRI_STD, sa(5),
-  LR(23,"8:03","last 4km MP 7:27")),
+  LR(23,"8:03","last 4km MP 7:27\n🚶 เกิน 3 ชม. → ใช้ run-walk 9:1 ได้ (วิ่ง 9 นาที เดินเร็ว 1 นาที) ลดแรงกระแทกสะสมที่เอ็นและฝ่าเท้า และตรงกับกลยุทธ์ที่อาจใช้จริงวันแข่ง")),
  W(11,"Peak","volume สูงสุด 56km",56,
   "Interval 6×800m @6:25-6:32\nrecovery jog 200m", ez(7),
   "MP Run 10km @7:27 🎯\nต่อเนื่อง · WU/CD 2km", FRI_STD, sa(5),
-  LR(24,"8:00","last 5km MP 7:27")),
+  LR(24,"8:00","last 5km MP 7:27\n🚶 เกิน 3 ชม. → ใช้ run-walk 9:1 ได้ (วิ่ง 9 นาที เดินเร็ว 1 นาที) ลดแรงกระแทกสะสมที่เอ็นและฝ่าเท้า และตรงกับกลยุทธ์ที่อาจใช้จริงวันแข่ง")),
  W(12,"Deload","🔽 ฟื้นตัว 3",38,
   "Interval 6×400m @6:25\nrecovery jog เต็มที่ · เบา", ez(5),
   "Build-up 8km ไล่เพซ · เบา\nจบไม่เกิน 7:20", FRI_LIGHT, sa(4),
   LR(16,"8:10")),
 
  W(13,"Peak","เตรียมสู่ 26km",55,
-  "Interval 5×1km @6:25-6:32\nrecovery jog 200m / 90s", ez(7),
+  "Interval 5×1km @6:58-7:12 ⚠️ปรับใหม่\nrecovery jog 200m / 90s", ez(7),
   "Tempo 9km @6:50-7:00\nต่อเนื่อง · WU/CD 2km", FRI_STD, sa(5),
-  LR(24,"8:00","last 8km MP 7:27 · ฝึกคุมเพซปลาย")),
+  LR(24,"8:00","last 8km MP 7:27 · ฝึกคุมเพซปลาย\n🚶 เกิน 3 ชม. → ใช้ run-walk 9:1 ได้ (วิ่ง 9 นาที เดินเร็ว 1 นาที) ลดแรงกระแทกสะสมที่เอ็นและฝ่าเท้า และตรงกับกลยุทธ์ที่อาจใช้จริงวันแข่ง")),
  W(14,"Peak","🎯 Long ไกลสุด 26km",56,
   "Hill Repeats 45s ×8 @RPE 7\nเบาลง เก็บแรงไว้วันอาทิตย์", ez(7),
   "MP Run 8km @7:27\nต่อเนื่อง · WU/CD 2km", FRI_STD, sa(5),
-  LR(26,"7:58","🎯 ไกลสุด · last 8km MP 7:27 · ซ้อม fueling เต็มรูปแบบ\nใส่ชุด+เกิบวันแข่ง · ตื่น+กินเหมือนเช้าวันแข่งจริง")),
+  LR(26,"7:58","🎯 ไกลสุด · last 8km MP 7:27 · ซ้อม fueling เต็มรูปแบบ\nใส่ชุด+เกิบวันแข่ง · ตื่น+กินเหมือนเช้าวันแข่งจริง\n🚶 เกิน 3 ชม. → ใช้ run-walk 9:1 ได้ (วิ่ง 9 นาที เดินเร็ว 1 นาที) ลดแรงกระแทกสะสมที่เอ็นและฝ่าเท้า และตรงกับกลยุทธ์ที่อาจใช้จริงวันแข่ง")),
  W(15,"Peak","ปิด Peak",48,
   "Interval 6×800m @6:25-6:32\nrecovery jog 200m", ez(6),
   "MP Run 8km @7:27\nลองแตะ 7:06 (Dream) 2km สุดท้าย", FRI_STD, sa(5),
@@ -478,9 +497,9 @@ const weeks=[
  // Race week — custom: NO strength, Fri+Sat full rest
  {n:18,ph:"RACE",foc:"🏆 RACE WEEK",km:12,date:wkDate(18),lrTime:"—",days:[
    ["Mon","พัก (Rest) · ยืดเหยียดเบาๆ",0],
-   ["Tue","Easy 4km @8:05-8:25 + strides 4×80m\nขาเบา สดชื่น",0],
-   ["Wed","Easy 3km @8:05-8:25\nสั้น เบา",0],
-   ["Thu","Easy 4km @8:05-8:25 + strides 4×80m\nปลุกขาครั้งสุดท้าย",0],
+   ["Tue","Easy 4km @8:25-8:55 + strides 4×80m\nขาเบา สดชื่น",0],
+   ["Wed","Easy 3km @8:25-8:55\nสั้น เบา",0],
+   ["Thu","Easy 4km @8:25-8:55 + strides 4×80m\nปลุกขาครั้งสุดท้าย",0],
    ["Fri","REST เต็มวัน · เริ่ม Carb-load\n❌ ไม่ยกเวท ❌ ไม่วิ่ง",0],
    ["Sat","REST หรือ เดิน/jog เบามาก 10 นาที\nเตรียมของ · นอนเร็ว",0],
    ["Sun","🏆 RACE DAY — Sub 5:15!\nอาทิตย์ 15 พ.ย. 2026\nออกที่ 7:27 · Gel ทุก 30 นาที (เป้า 45-60g คาร์บ/ชม.) + เกลือแร่\nkm 25-30 ประเมิน — ถ้าไหวเร่งหา Dream 5:00 (7:06)",1]]},
